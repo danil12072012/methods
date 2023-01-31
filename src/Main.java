@@ -19,13 +19,13 @@ public class Main {
         int year = 2022;
         printParameterYear(year);
     }
-    public static void getClient (String clientOs, int year) {
+    public static void getClient (int clientOs, int year) {
         int controlYear = 2015;
-        if (year < controlYear && clientOs == "ios") {
+        if (year < controlYear && clientOs == 0) {
             System.out.println("Установите облегченную версию приложения для iOS по ссылке.");
-        }else if (year >= controlYear && clientOs == "ios") {
+        }else if (year >= controlYear && clientOs == 0) {
             System.out.println("Установите версию приложения для iOS по ссылке.");
-        } else if (year < controlYear && clientOs == "android") {
+        } else if (year < controlYear && clientOs == 1) {
             System.out.println("Установите облегченную версию приложения для android по ссылке.");
 
         }else {
@@ -33,28 +33,30 @@ public class Main {
     }
     public static void task2 () {
         System.out.println("Задача 2");
-        String clientOs = "android";
+        int clientOs = 0;
         int clientDeviceYear = 2016;
        getClient(clientOs, clientDeviceYear);
 
     }
     public static void printTieDeliveri (int kilometer){
-        int deliveryTimeIsOneDay = 1;
-        int deliveryTimeIsTwoDays = deliveryTimeIsOneDay + 1;
-        int deliveryTimeIsThreeDays = deliveryTimeIsTwoDays + 1;
+        int deliveryTime = 1;
         if ( kilometer <= 20) {
-            System.out.println("Потребуется дней: " + deliveryTimeIsOneDay);
+            deliveryTime = deliveryTime + 1;
+            System.out.println("Потребуется дней: " + deliveryTime);
         }else if (kilometer>20 && kilometer<=60) {
-            System.out.println("Потребуется дней: " + deliveryTimeIsTwoDays);
+            deliveryTime = deliveryTime + 2;
+            System.out.println("Потребуется дней: " + deliveryTime);
         }else if (kilometer>60 && kilometer<=100) {
-            System.out.println("Потребуется дней: " + deliveryTimeIsThreeDays);
+            deliveryTime = deliveryTime + 3;
+            System.out.println("Потребуется дней: " + deliveryTime
+            );
         } else {
             System.out.println("К сожалению доставки нет.");
         }
     }
     public static void task3 () {
         System.out.println("Задача 3");
-        int deliveryDistance = 15;
+        int deliveryDistance = 61;
         printTieDeliveri(deliveryDistance);
 
 
